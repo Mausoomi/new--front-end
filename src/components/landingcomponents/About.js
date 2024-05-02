@@ -303,16 +303,14 @@ const About = () => {
             </span>
             <div className="About_main_column_left_div_col_right">
               <h3>{t("About.leftSub3")}</h3>
-              <p>
-                {t("About.leftSubpara3")}
-              </p>
+              <p>{t("About.leftSubpara3")}</p>
             </div>
           </div>
         </div>
         <div className="About_main_column_right_div">
           <div className="About_main_column_right_form_div mt-2">
             <h2>{t("About.Signuptoday")}</h2>
-            <form onSubmit={onSubmit}>
+            <form>
               {/* Input fields with error messages */}
               <input
                 // Username input
@@ -324,9 +322,10 @@ const About = () => {
                 autoComplete="off"
                 value={Username}
                 onChange={(e) => setUsername(e.target.value)}
-                
               />
-              {errors.Username && <div className="error">{errors.Username}</div>}
+              {errors.Username && (
+                <div className="error">{errors.Username}</div>
+              )}
               {/* Email input */}
               <input
                 className=" w-100 input_style"
@@ -337,7 +336,6 @@ const About = () => {
                 autoComplete="off"
                 value={Email}
                 onChange={(e) => setEmail(e.target.value)}
-               
               />
               {errors.Email && <div className="error">{errors.Email}</div>}
               {/* Phone number input */}
@@ -354,9 +352,10 @@ const About = () => {
                   autoFocus: true,
                   className: "form-control phonenumberinput",
                 }}
-             
               />
-              {errors.Phone_Number && <div className="error">{errors.Phone_Number}</div>}
+              {errors.Phone_Number && (
+                <div className="error">{errors.Phone_Number}</div>
+              )}
               {/* Password input */}
               <input
                 className=" w-100 input_style"
@@ -367,18 +366,25 @@ const About = () => {
                 autoComplete="off"
                 value={Password}
                 onChange={(e) => setPassword(e.target.value)}
-                
               />
-              {errors.Password && <div className="error">{errors.Password}</div>}
+              {errors.Password && (
+                <div className="error">{errors.Password}</div>
+              )}
               {/* ReCAPTCHA */}
               <ReCAPTCHA
                 sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 onChange={onChange}
                 ref={recaptcheref}
               />
-              {errors.recaptcha && <div className="error">{errors.recaptcha}</div>}
+              {errors.recaptcha && (
+                <div className="error">{errors.recaptcha}</div>
+              )}
               {/* Submit button */}
-              <button type="submit" className="btn btn-outline-light mt-3">
+              <button
+                type="submit"
+                className="btn btn-outline-light mt-3"
+                onClick={onSubmit}
+              >
                 {t("About.GetStarted")}
               </button>
             </form>

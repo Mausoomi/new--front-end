@@ -289,7 +289,7 @@ const StudentDash = () => {
   const [date, setDate] = useState(new Date()); // Define date state variable
   const [fillterBookingData, setFillterBookingData] = useState(false);
   const [fillterDataValue, setFillterDataValue] = useState("");
-  // console.log(Bookings);
+  console.log(Bookings);
 
   useEffect(() => {
     dispatch(GetBookingsByStudentID(student._id));
@@ -377,13 +377,16 @@ const StudentDash = () => {
       // Iterate through each booking and check if the date is scheduled
       for (const booking of Bookings) {
         if (booking?.Scheduled_Dates) {
-          for (const scheduledDateObj of booking?.Scheduled_Dates) {
-            for (const scheduledDates of scheduledDateObj) {
-              const scheduledDate = Object?.keys(scheduledDates);
-              for (const Dates of scheduledDate) {
-                const scheduledDateString = new Date(Dates)?.toDateString();
-                if (scheduledDateString === dateString) {
-                  return <p className="bg-success text-white">L</p>;
+          // console.log("----------------- Bookings -" , booking?.Scheduled_Dates);
+          if (booking?.Scheduled_Dates[0] !== null) {
+            for (const scheduledDateObj of booking?.Scheduled_Dates) {
+              for (const scheduledDates of scheduledDateObj) {
+                const scheduledDate = Object?.keys(scheduledDates);
+                for (const Dates of scheduledDate) {
+                  const scheduledDateString = new Date(Dates)?.toDateString();
+                  if (scheduledDateString === dateString) {
+                    return <p className="bg-success text-white">L</p>;
+                  }
                 }
               }
             }
@@ -395,7 +398,7 @@ const StudentDash = () => {
   };
 
   const handleCalendarClick = (value) => {
-    console.log(value);
+    // console.log(value);
     // setFillterBookingData(true);
     // setFillterDataValue(value)
     // console.log(fillterDataValue)
@@ -413,7 +416,7 @@ const StudentDash = () => {
     const options = {
       weekday: "short",
       month: "short",
-      day: "numeric", // Use "2-digit" to display day without leading zeros
+      day: "2-digit", // Use "2-digit" to display day without leading zeros
       year: "numeric",
     };
 
@@ -499,15 +502,6 @@ const StudentDash = () => {
                       {/* here */}
                       {Bookings?.length > 0 ? (
                         Bookings?.map((Booking, index) => {
-                          // Check if any date in Scheduled_Dates matches fillterDataValue
-                          // const isDateMatched = Booking?.Scheduled_Dates?.some(
-                          //   (dateObj) => {
-                          //     const date = Object.values(dateObj)[0];
-                          //     console.log(date ,"date")
-                          //     console.log(dateObj);
-                          //     return date === fillterDataValue;
-                          //   }
-                          // );
                           const isDateMatched = Booking?.Scheduled_Dates?.some(
                             (dateObj) => {
                               // Iterate over the entries of dateObj
@@ -516,8 +510,39 @@ const StudentDash = () => {
                               )) {
                                 console.log(value, "date");
                                 console.log(dateObj);
+                                // for (let i=0; i>)
+                                // for (const key in value){
+                                //   if (typeof value[key] === 'object' && !Array.isArray(value[key])) {
+                                //             console.log(key,"new"); // Log the key of the immediate nested object
+                                //           }
+                                //         }
                                 for (const innerKey in value) {
-                                  console.log(innerKey);
+                                  // if (
+                                  //   typeof value[innerKey] === "object" &&
+                                  //   !Array.isArray(value[innerKey])
+                                  // ) {
+                                  //   console.log(innerKey, "new"); // Log the key of the immediate nested object
+                                  // }
+                                  console.log(value[innerKey]);
+                                    if (typeof value[innerKey] === "object") {
+                                      // If the key is 'a' or 'h', log the key and its value
+                                        console.log(innerKey, "...keyout");
+                                      if (innerKey === fillterDataValue) {
+                                        console.log(innerKey, "...key");
+                                        console.log(
+                                          fillterBookingData,
+                                          "..fillter"
+                                        );
+                                      }
+                                      // Recursively call iterate function for nested objects
+                                      // iterate(obj[key]);
+                                    }
+                                  console.log(value, "---innerkey");
+
+                                  console.log(
+                                    fillterDataValue,
+                                    "--fillterDataselectedclicked"
+                                  );
                                   return innerKey === fillterDataValue; // If key matches filterDataValue, return true
                                 }
                                 // Assuming fillterDataValue is defined elsewhere
@@ -620,27 +645,28 @@ const StudentDash = () => {
                             <td className="td">
                               {Booking?.Scheduled_Dates?.map(
                                 (dateObj, index) => {
-                                  const date = Object.keys(dateObj)[0]; // Extracting the date
-                                  const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
-
-                                  return (
-                                    <div key={index}>
-                                      {Object?.keys(timeSlots).map((date) => (
-                                        <div key={date}>
-                                          <p>Date: {date}</p>
-                                          <ul>
-                                            {timeSlots[date].map(
-                                              (slot, index) => (
-                                                <li key={index}>
-                                                  {slot.start} - {slot.end}
-                                                </li>
-                                              )
-                                            )}
-                                          </ul>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  );
+                                  if (dateObj !== null) {
+                                    const date = Object.keys(dateObj)[0]; // Extracting the date
+                                    const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
+                                    return (
+                                      <div key={index}>
+                                        {Object?.keys(timeSlots).map((date) => (
+                                          <div key={date}>
+                                            <p>Date: {date}</p>
+                                            <ul>
+                                              {timeSlots[date].map(
+                                                (slot, index) => (
+                                                  <li key={index}>
+                                                    {slot.start} - {slot.end}
+                                                  </li>
+                                                )
+                                              )}
+                                            </ul>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    );
+                                  }
                                 }
                               )}
                             </td>

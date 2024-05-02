@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-input{
+input {
   border: 1px solid green;
 }
 .d_center {
@@ -23,7 +23,13 @@ input{
   justify-content: center;
   align-items: center;
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
 /* *------------------------------------------------------Navbar style */
 
 .Navbar_main {
@@ -45,7 +51,9 @@ input{
   align-items: center;
   min-height: inherit;
 }
-
+.react-tel-input .form-control{
+  width: 100% !important;
+}
 .Navlink {
   min-height: inherit;
   padding: 0px 20px;
@@ -93,7 +101,7 @@ input{
   font-size: 15px !important;
 }
 
-.Navbar_nav_lastdiv>span {
+.Navbar_nav_lastdiv > span {
   font-size: 14px;
 }
 
@@ -103,7 +111,7 @@ input{
   border-radius: 50%;
 }
 
-.Navbar_nav_firstdiv>img {
+.Navbar_nav_firstdiv > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -114,8 +122,6 @@ input{
 }
 
 /* *------------------------------------------------------Home style */
-
-
 
 .slick-prev:before,
 .slick-next:before {
@@ -148,19 +154,19 @@ input{
   gap: 29px;
 }
 
-.Home_text_div_col1>h1 {
+.Home_text_div_col1 > h1 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 42px;
   color: white;
 }
 
-.Home_text_div_col1>h3 {
+.Home_text_div_col1 > h3 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 14px;
   color: white;
 }
 
-.Home_text_div_col1>button {
+.Home_text_div_col1 > button {
   width: 24%;
   font-size: 14px;
   padding: 10px;
@@ -188,13 +194,13 @@ input{
   justify-content: space-between;
 }
 
-.Home_text_div_col2>h1 {
+.Home_text_div_col2 > h1 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 42px;
   color: white;
 }
 
-.Home_text_div_col2>h3 {
+.Home_text_div_col2 > h3 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 14px;
   color: white;
@@ -203,7 +209,7 @@ input{
   font-weight: 200;
 }
 
-.Home_text_div_col2>button {
+.Home_text_div_col2 > button {
   width: 14%;
   font-size: 14px;
   padding: 10px;
@@ -230,13 +236,13 @@ input{
   justify-content: space-between;
 }
 
-.Home_text_div_col3>h1 {
+.Home_text_div_col3 > h1 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 42px;
   color: white;
 }
 
-.Home_text_div_col3>h3 {
+.Home_text_div_col3 > h3 {
   text-decoration: none solid rgb(51, 51, 51);
   font-size: 14px;
   color: white;
@@ -245,7 +251,7 @@ input{
   font-weight: 200;
 }
 
-.Home_text_div_col3>button {
+.Home_text_div_col3 > button {
   width: 24%;
   font-size: 14px;
   padding: 10px;
@@ -285,7 +291,6 @@ input{
   display: flex;
   justify-content: center;
 }
-
 
 .Home_main_lower_box {
   border: 1px solid #f0f0f0;
@@ -328,20 +333,20 @@ input{
   overflow: hidden;
 }
 
-.Home_main_lower_box_circle>img {
+.Home_main_lower_box_circle > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.Home_main_lower_box>p {
+.Home_main_lower_box > p {
   color: #757575;
   font-size: 14px;
   width: 100%;
   margin-top: 15px;
   /* Adjust spacing between heading and paragraph */
 }
-.slick-slide{
+.slick-slide {
   width: 200px;
 }
 
@@ -349,7 +354,6 @@ input{
   max-width: 1174px;
   margin: 0 auto;
   width: 100%;
-
 }
 /* ------------------------------------------------------------------- */
 
@@ -398,15 +402,7 @@ input{
 }
  */
 
-
-
-
 /* ------------------------------------------------------------------  About style */
-
-
-
-
-
 
 .About_main_div {
   /* min-height: 500px; */
@@ -433,7 +429,7 @@ input{
   /* background-color:red; */
 }
 
-.About_main_column_left_div>h2 {
+.About_main_column_left_div > h2 {
   font-size: 28px;
   margin: 20px 0 10px 0;
   padding: 0px 0px 10px 0px;
@@ -449,14 +445,14 @@ input{
   display: flex;
 }
 
-.About_main_column_left_div_col>span {
+.About_main_column_left_div_col > span {
   width: 90px;
   height: 80px;
   margin: 0 0 0 -15px;
   padding: 15px 20px 15px 20px;
 }
 
-.About_main_column_left_div_col>span>i {
+.About_main_column_left_div_col > span > i {
   font-size: 25px;
   line-height: 50px;
   text-align: center;
@@ -468,7 +464,7 @@ input{
   border-radius: 50%;
 }
 
-.About_main_column_left_div_col_right>h3 {
+.About_main_column_left_div_col_right > h3 {
   font-size: 21px;
   font-weight: 700;
   line-height: 30px;
@@ -476,7 +472,7 @@ input{
   color: #454545;
 }
 
-.About_main_column_left_div_col_right>p {
+.About_main_column_left_div_col_right > p {
   font-size: 14px;
   font-weight: 200;
   line-height: 24px;
@@ -485,7 +481,6 @@ input{
 }
 
 .About_main_column_right_div {
-  
   min-height: inherit;
   padding: 0px 10px 0px 10px;
   display: flex;
@@ -503,14 +498,14 @@ input{
   background-color: #29ca8e;
 }
 
-.About_main_column_right_form_div>h2 {
+.About_main_column_right_form_div > h2 {
   font-size: 18px;
   padding: 0 0 0px 0;
   text-align: center;
   color: white;
 }
 
-.About_main_column_right_form_div>form {
+.About_main_column_right_form_div > form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -553,12 +548,12 @@ input{
   margin-top: 20px;
 }
 
-.ourteacher_main_upper_div>h2 {
+.ourteacher_main_upper_div > h2 {
   font-size: 28px;
   color: #353535;
 }
 
-.ourteacher_main_upper_div>small {
+.ourteacher_main_upper_div > small {
   font-size: 18px;
   color: #777777;
 }
@@ -571,24 +566,21 @@ input{
 }
 
 .ourteacher_main_lower_box {
-
   border-radius: 10px;
 }
 
 .ourteacher_main_lower_div_img {
-  width: 150px;
-  /* height: 276px; */
+  width: 193px;
+  height: 276px;
   object-fit: cover;
-
 }
 
 .ourteacher_main_lower_box {
-
 }
 
 .ourteacher_main_lower_box_div {
   width: 100%;
-  
+
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -609,7 +601,7 @@ input{
   color: #3bca8e;
 }
 
-.ourteacher_main_lower_box_div>h3 {
+.ourteacher_main_lower_box_div > h3 {
   font-size: 21px;
   font-weight: 700;
   color: #454545;
@@ -649,7 +641,6 @@ input{
 /* ----------------------------------------------------- Reviews style */
 
 .reviews_main_page_div {
-
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -667,18 +658,17 @@ input{
   margin-top: 20px;
 }
 
-.reviews_main_upper_div>h2 {
+.reviews_main_upper_div > h2 {
   font-size: 28px;
   color: #353535;
 }
 
-.reviews_main_upper_div>small {
+.reviews_main_upper_div > small {
   font-size: 18px;
   color: #777777;
 }
 
 .reviews_main_lower_div {
- 
   /* ackground-color: red; */
   display: flex;
 }
@@ -706,7 +696,7 @@ input{
   overflow: hidden;
 }
 
-.reviews_main_lower_box_header_circle>img {
+.reviews_main_lower_box_header_circle > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -718,17 +708,17 @@ input{
   line-height: 0px;
 }
 
-.reviews_main_lower_box_header_heading>h4 {
+.reviews_main_lower_box_header_heading > h4 {
   font-size: 18px;
   color: #353535;
 }
 
-.reviews_main_lower_box_header_heading>span {
+.reviews_main_lower_box_header_heading > span {
   font-size: 14px;
   color: #757575;
 }
 
-.reviews_main_lower_box>p {
+.reviews_main_lower_box > p {
   font-size: 16px;
   margin-top: 20px;
   text-align: start;
@@ -740,7 +730,7 @@ input{
   align-items: center;
 }
 
-.reviews_main_lower_box_footer>i {
+.reviews_main_lower_box_footer > i {
   margin-right: 10px;
   color: #3f51b5;
   font-size: 14px;
@@ -757,7 +747,7 @@ input{
   align-items: center;
 }
 
-.contact_main_page_div>form {
+.contact_main_page_div > form {
   width: 50%;
   height: 100%;
   /* margin-top: 170px; */
@@ -777,12 +767,12 @@ input{
   line-height: 10px;
 }
 
-.contact_main_page_left_div_header>h2 {
+.contact_main_page_left_div_header > h2 {
   font-size: 28px;
   color: #252020;
 }
 
-.contact_main_page_left_div_header>small {
+.contact_main_page_left_div_header > small {
   font-size: 14px;
   color: #252020;
 }
@@ -843,7 +833,7 @@ input{
   overflow: hidden;
 }
 
-.contact_main_page_right_img_div>img {
+.contact_main_page_right_img_div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -867,12 +857,12 @@ input{
   /* background-color: red; */
 }
 
-.footer_main_box_col_1>h2 {
+.footer_main_box_col_1 > h2 {
   font-size: 20px;
   color: #ffffff;
 }
 
-.footer_main_box_col_1>p {
+.footer_main_box_col_1 > p {
   color: #909090;
   font-size: 12px;
   text-align: start;
@@ -915,19 +905,19 @@ input{
   margin-right: 15px;
 }
 .Packages_list_style {
-  overflow:scroll;
+  overflow: scroll;
 }
 .footer_main_box_col_2 {
   padding: 0px 66px;
   /* background-color: red; */
 }
 
-.footer_main_box_col_2>h2 {
+.footer_main_box_col_2 > h2 {
   font-size: 20px;
   color: #ffffff;
 }
 
-.footer_main_box_col_2>p {
+.footer_main_box_col_2 > p {
   color: #909090;
   font-size: 12px;
   text-align: start;
@@ -962,7 +952,7 @@ input{
   /* background-color: red; */
 }
 
-.footer_main_box_col_3>h2 {
+.footer_main_box_col_3 > h2 {
   font-size: 20px;
   color: #ffffff;
 }
@@ -995,7 +985,7 @@ input{
   height: 100%;
 }
 
-.teachers_left_div>img {
+.teachers_left_div > img {
   width: 250px;
   height: 300px;
 }
@@ -1007,8 +997,6 @@ input{
   flex-direction: column;
   margin-left: 53px;
 }
-
-
 
 .teachers_right_div_link {
   text-decoration: none;
@@ -1052,7 +1040,7 @@ input{
   /* background-color: red; */
 }
 
-.TeacherDetails_left_img_col>img {
+.TeacherDetails_left_img_col > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1067,11 +1055,11 @@ input{
   align-items: flex-start;
 }
 
-.TeacherDetails_right_col>span {
+.TeacherDetails_right_col > span {
   color: #757575;
 }
 
-.TeacherDetails_right_col>h2 {
+.TeacherDetails_right_col > h2 {
   color: #252020;
 }
 
@@ -1082,7 +1070,7 @@ input{
   width: 50%;
 }
 
-.TeacherDetails_right_col>p {
+.TeacherDetails_right_col > p {
   color: #757575;
   text-align: start;
   width: 75%;
@@ -1131,7 +1119,7 @@ input{
   border: 1px solid #258754;
 }
 
-.scheduledpage_timeslot>button {
+.scheduledpage_timeslot > button {
   flex: 3;
   background-color: white;
   padding: 10px;
@@ -1145,7 +1133,7 @@ input{
   padding: 10px;
 }
 
-.scheduledpage_display_section>p:nth-child(3) {
+.scheduledpage_display_section > p:nth-child(3) {
   color: #258754;
 }
 
@@ -1179,7 +1167,7 @@ input{
   margin: -0.5em;
 }
 
-.react-calendar--doubleView .react-calendar__viewContainer>* {
+.react-calendar--doubleView .react-calendar__viewContainer > * {
   width: 50%;
   margin: 0.5em;
 }
@@ -1352,7 +1340,7 @@ input{
   /* background-color: white;   */
 }
 
-.popup_form_div>form {
+.popup_form_div > form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -1362,11 +1350,11 @@ input{
   padding: 10px;
 }
 
-.popup_form_div>form>label {
+.popup_form_div > form > label {
   color: #252020;
 }
 
-.popup_form_div>form>input {
+.popup_form_div > form > input {
   width: 100%;
   border-radius: 5px;
   padding: 4px;
@@ -1425,7 +1413,7 @@ input{
   margin-bottom: 2px;
 }
 
-.Dashboard_left_head_column>h5 {
+.Dashboard_left_head_column > h5 {
   font-weight: 700;
   font-size: 16px;
 }
@@ -1460,7 +1448,7 @@ input{
   color: white;
 }
 
-.Dashboard_left_column_right_section>h6 {
+.Dashboard_left_column_right_section > h6 {
   margin-top: 8px;
   font-weight: 600;
 }
@@ -1470,15 +1458,15 @@ input{
   background-color: white;
 }
 
-.Dashboard_left_column.active>.Dashboard_left_column_left_section {
+.Dashboard_left_column.active > .Dashboard_left_column_left_section {
   color: black;
 }
 
-.Dashboard_left_column.active>.Dashboard_left_column_right_section {
+.Dashboard_left_column.active > .Dashboard_left_column_right_section {
   color: black;
 }
 
-.Dashboard_left_column.active>.Dashboard_left_column_right_section>h6 {
+.Dashboard_left_column.active > .Dashboard_left_column_right_section > h6 {
   color: black;
   font-weight: 600;
 }
@@ -1508,7 +1496,7 @@ input{
   padding: 20px;
 }
 
-.CourseDetails_left_img_col>img {
+.CourseDetails_left_img_col > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1524,11 +1512,11 @@ input{
   /* justify-content: space-around; */
 }
 
-.CourseDetails_right_col>span {
+.CourseDetails_right_col > span {
   color: #757575;
 }
 
-.CourseDetails_right_col>h2 {
+.CourseDetails_right_col > h2 {
   color: #252020;
 }
 
@@ -1539,7 +1527,7 @@ input{
   width: 40%;
 }
 
-.CourseDetails_right_col>p {
+.CourseDetails_right_col > p {
   color: #757575;
   text-align: start;
   margin-top: 20px;
@@ -1556,7 +1544,7 @@ input{
   justify-content: space-around;
 }
 
-.Courserelated_main_div>span {
+.Courserelated_main_div > span {
   font-size: 30px;
   font-weight: 599;
   color: #252020;
@@ -1593,7 +1581,7 @@ input{
   overflow: hidden;
 }
 
-.Courserelated_card_img_div>img {
+.Courserelated_card_img_div > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1611,7 +1599,7 @@ input{
   color: #258754;
 }
 
-.Courserelated_card_div>p {
+.Courserelated_card_div > p {
   font-size: 15px;
   color: #252020;
   text-align: center;
@@ -1643,7 +1631,6 @@ input{
 .form-popup-content {
   background-color: #fff;
 
-
   min-height: 45%;
   padding: 15px;
   display: flex;
@@ -1655,7 +1642,7 @@ input{
   /* background-color: red; */
 }
 
-.form-popup-content>form {
+.form-popup-content > form {
   width: 100%;
   min-height: 100%;
   display: flex;
@@ -1672,23 +1659,22 @@ input{
   height: 90%;
 }
 
-.form-popup-content>form>label {
+.form-popup-content > form > label {
   font-size: 12px;
   color: #abadaf !important;
-
 }
 
-.form-group-sign>input {
-    border: none;
-    outline: none;
-    width: 100%;
-    border-bottom: 1px solid #107314;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-bottom: 5px;
+.form-group-sign > input {
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid #107314;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
 }
 
-.form-group-sign>input::placeholder {
+.form-group-sign > input::placeholder {
   color: #abadaf !important;
   font-size: 12px;
   opacity: 1;
@@ -1746,12 +1732,10 @@ input{
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 
-.notification_div>button {
+.notification_div > button {
   font-size: 12px;
   padding: 5px 10px;
 }
-
-
 
 .responsive-menu {
   position: fixed;
@@ -1773,18 +1757,17 @@ input{
   height: 800px;
   width: 100%;
   margin: 0 auto;
-
 }
 
 .react-tel-input .form-control {
   position: relative;
   font-size: 14px;
-  letter-spacing: .01rem;
+  letter-spacing: 0.01rem;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   padding-left: 48px;
   margin-left: 0;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid #168d09;
   border-radius: 5px;
   line-height: 25px;
@@ -1793,10 +1776,10 @@ input{
   outline: none;
   max-width: 83%;
 }
-.Home_main_upper_div_col3.slick-next{
+.Home_main_upper_div_col3.slick-next {
   display: none !important;
 }
-.Home_main_upper_div_col3.slick-next ::before{
+.Home_main_upper_div_col3.slick-next ::before {
   display: none !important;
 }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------responsive */
@@ -1804,451 +1787,423 @@ input{
   width: 35%;
 }
 
+.phone_style {
+  height: inherit;
+  padding: 0px;
+  /* margin: 0px 0px 6px 0px ; */
+}
 
+/* -----------------------------------------------------recaptcha */
 
+.rc-anchor-alert {
+  display: none !important;
+}
 
-  .phone_style {
-    height: inherit;
-    padding: 0px;
-    /* margin: 0px 0px 6px 0px ; */
-  }
+.rc-anchor-normal-footer {
+  display: none !important;
+}
 
-  /* -----------------------------------------------------recaptcha */
+#rc-anchor-container {
+  height: 60px !important;
+  width: 160px !important;
+}
 
-  .rc-anchor-alert {
-    display: none !important;
-  }
+/* --------------------------------------------------our teacher */
 
-  .rc-anchor-normal-footer {
-    display: none !important;
-  }
+.ourteacher_main_lower_box {
+  margin-top: 20px;
+}
 
-  #rc-anchor-container {
-    height: 60px !important;
-    width: 160px !important;
-  }
+.ourteacher_main_page_div {
+  justify-content: start;
+  padding: 0px;
+  min-height: initial;
+}
 
-  /* --------------------------------------------------our teacher */
+.ourteacher_main_lower_div {
+  flex-direction: column;
+  height: initial;
+}
 
-  .ourteacher_main_lower_box {
-    margin-top: 20px;
-  }
+/* ---------------------------------------------------------------------review */
 
-  .ourteacher_main_page_div {
-    justify-content: start;
-    padding: 0px;
-    min-height: initial;
-  }
+.reviews_main_page_div {
+  min-width: 100% !important;
+}
 
-  .ourteacher_main_lower_div {
-    flex-direction: column;
-    height: initial;
-  }
+.reviews_main_lower_box {
+  margin-top: 20px;
+}
 
+/* ---------------------------------------------------------------------contact */
 
-  /* ---------------------------------------------------------------------review */
+.contact_main_page_div {
+  min-height: initial;
+  padding: 50px 0px 50px 0px;
+}
 
-  .reviews_main_page_div {
- 
-    min-width: 100% !important;
-  }
+.contact_main_page_left_div {
+  width: 100%;
+  padding: 0px 40px;
+}
 
+.contact_main_page_left_div_input {
+  /* margin-top: 20px; */
+  padding: 5px;
+}
 
+.contact_main_page_left_div_submit_btn {
+  padding: 8px;
+  width: 55%;
+  margin-top: 20px;
+}
 
-  .reviews_main_lower_box {
-    margin-top: 20px;
-  }
+/* --------------------------------------------------------footer */
 
-  /* ---------------------------------------------------------------------contact */
+.footer_main_div {
+  padding: 50px;
+  height: initial;
+}
 
-  .contact_main_page_div {
-   
-    min-height: initial;
-    padding: 50px 0px 50px 0px;
-  }
+.footer_main_box_col_2 {
+  padding: 20px;
+}
 
-  .contact_main_page_left_div {
-    width: 100%;
-    padding: 0px 40px;
-  }
+/* -------------------------------------------------------------scheduled responsive */
 
-  .contact_main_page_left_div_input {
-    /* margin-top: 20px; */
-    padding: 5px;
-  }
+.scheduledpage_main_div {
+  flex-direction: column;
+  padding: 50px;
+  margin-top: 250px;
+}
 
-  .contact_main_page_left_div_submit_btn {
-    padding: 8px;
-    width: 55%;
-    margin-top: 20px;
-  }
+.scheduledpage_time_div {
+  margin-top: 60px;
+  width: 80%;
+}
 
- 
+.scheduledpage_display_section {
+  width: 80%;
+  margin-top: 30px;
+}
 
-  /* --------------------------------------------------------footer */
+/* ----------------------------------------------------------------------------.CourseDetails_main_div */
 
-  .footer_main_div {
-    padding: 50px;
-    height: initial;
-  }
+.CourseDetails_main_div {
+  flex-direction: column;
+}
 
+.CourseDetails_right_col {
+  width: 80%;
+}
 
+.CourseDetails_right_col > button {
+  width: 50% !important;
+}
 
+.Courserelated_main_div {
+  padding: 0px;
+}
 
+.Courserelated_card_div {
+  margin-top: 20px;
+  width: 55%;
+}
 
+.TeacherDetails_main_div {
+  flex-direction: column;
+}
 
-  .footer_main_box_col_2 {
-    padding: 20px;
-  }
+.TeacherDetails_left_col {
+  width: 100%;
+}
 
-  /* -------------------------------------------------------------scheduled responsive */
+.TeacherDetails_right_col {
+  width: 100%;
+}
 
-  .scheduledpage_main_div {
-    flex-direction: column;
-    padding: 50px;
-    margin-top: 250px;
-  }
+.Courserelated_main_div > span {
+  margin-top: 20px;
+}
 
-  .scheduledpage_time_div {
-    margin-top: 60px;
-    width: 80%;
-  }
+/* ------------------------------------------------------------------------.form-popup { */
 
-  .scheduledpage_display_section {
-    width: 80%;
-    margin-top: 30px;
-  }
+.form-popup {
+  width: 100%;
+}
 
-  /* ----------------------------------------------------------------------------.CourseDetails_main_div */
+.phonenumberinput {
+  margin-left: 40px !important;
+  width: 145px !important;
+}
 
-  .CourseDetails_main_div {
-    flex-direction: column;
-  }
+.react-calendar {
+  width: auto;
+}
 
-  .CourseDetails_right_col {
-    width: 80%;
-  }
+/* ----------------------------------------------------------------------------------Teacher Details */
 
-  .CourseDetails_right_col>button {
-    width: 50% !important;
-  }
+.TeacherDetails_right_col_line {
+  width: 250%;
+}
 
+.TeacherDetails_right_col > p {
+  width: 100%;
+}
 
+.TeacherDetails_right_col > button {
+  width: 50% !important;
+}
 
-  .Courserelated_main_div {
-    padding: 0px;
-  }
-
-  .Courserelated_card_div {
-    margin-top: 20px;
-    width: 55%;
-  }
-
-  .TeacherDetails_main_div {
-    flex-direction: column;
-  }
-
-  .TeacherDetails_left_col {
-    width: 100%;
-  }
-
-  .TeacherDetails_right_col {
-    width: 100%;
-  }
-
-  .Courserelated_main_div>span {
-    margin-top: 20px;
-  }
-
-  /* ------------------------------------------------------------------------.form-popup { */
-
-  .form-popup {
-    width: 100%;
-  }
-
-
-
-  .phonenumberinput {
-    margin-left: 40px !important;
-    width: 145px !important;
-  }
-
-  .react-calendar {
-    width: auto;
-  }
-
-  /* ----------------------------------------------------------------------------------Teacher Details */
-
-  .TeacherDetails_right_col_line {
-    width: 250%;
-  }
-
-  .TeacherDetails_right_col>p {
-    width: 100%;
-  }
-
-  .TeacherDetails_right_col>button {
-    width: 50% !important;
-  }
-  
-  .reviews_main_lower_box {
-    width: 80%;
-    margin: 0;
-    padding: 10px;
-    }
-  .reviews_main_lower_div{
+.reviews_main_lower_box {
+  width: 80%;
+  margin: 0;
+  padding: 10px;
+}
+.reviews_main_lower_div {
   align-items: center;
   gap: 9%;
-  padding:  0 6rem;
-    }
+  padding: 0 6rem;
+}
 
-    @media only screen  and (max-width: 1024px) {
-      .footer_main_box_col_3 {
-        width: 100%;
-        padding: 20px;
-      }
-      .contact_main_page_div>form {
-        width: 95%;
-      }
-      .contact_main_page_div {
-   
-        min-height: initial;
-        padding: 20px 0px 20px 0px;
-      }
+@media only screen and (max-width: 1024px) {
+  .footer_main_box_col_3 {
+    width: 100%;
+    padding: 20px;
+  }
+  .contact_main_page_div > form {
+    width: 95%;
+  }
+  .contact_main_page_div {
+    min-height: initial;
+    padding: 20px 0px 20px 0px;
+  }
   .footer_main_box_col_1 {
     padding: 20px;
     width: 100%;
   }
-      .form-popup-content{
-      width: 80%;
-      }
-      .teacher-data-main-page {
-        width: 300px;
-        margin: 0 auto;
-      
-      }
-      .contact_main_page_right_div {
-        display: none;
-      }
-      /* show element on medium-sized screens */
-      .chatbotbtn {
-        right: 9%;
-      }
-      .reviews_main_lower_div {
-        flex-direction: column;
-        padding: 0 1rem;
-        
-      }
-      .Home_text_div_col2>h3 {
-        width: 115%;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 8px;
-      }
-    
-      .Home_text_div_col2>h1 {
-        font-size: 35px;
-      }
-      .footer_main_box {
-        flex-direction: column;
-      }
-      .Home_text_div_col2>button {
-        width: 34%;
-        font-size: 12px;
-        padding: 18px;
-        margin-top: 20px;
-      }
-    
-      .Home_text_div_col2 {
-        left: 55%;
-        width: 100%;
-      }
-    
-      .Home_text_div_col3>h1 {
-        font-size: 27px;
-      }
-    
-      .Home_text_div_col3>button {
-        width: 34%;
-        font-size: 12px;
-        padding: 18px;
-        margin-top: 20px;
-      }
-    
-      .Home_text_div_col3>h3 {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 9px;
-        line-height: 11px;
-      }
-    
-      .Home_text_div_col3 {
-      
-        width: 80%;
-      }
-    
-      .Home_text_div_col1>h3 {
-        font-size: 9px;
-        line-height: 11px;
-      }
-    
-      .Home_text_div_col1>button {
-        width: 34%;
-        font-size: 12px;
-        padding: 18px;
-        margin-top: 20px;
-      }
-    
-      .Home_text_div_col1>h1 {
-        font-size: 28px;
-      }
-    
-      .Home_text_div_col1 {
-       
-        width: 80%;
-      }
-    
-      .Home_main_upper_div {
-        /* background-color: red; */
-        /* padding: 20px 30px; */
-      }
-    
-      /* --------------------------------------------nav*/
-    
-      .Navbar_main {
-        position: fixed;
-        padding: 0px 40px;
-        width: 100%;
-    
-      }
-    
-      .Navbar_nav_div {
-        display: none;
-      }
-    
-      .nav-btn-sign {
-        font-size: 8px !important;
-      }
-    
-    
-      .menu-button {
-        display: initial !important;
-      }
-    
-      /* 
+  .form-popup-content {
+    width: 80%;
+  }
+  .teacher-data-main-page {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .contact_main_page_right_div {
+    display: none;
+  }
+  /* show element on medium-sized screens */
+  .chatbotbtn {
+    right: 9%;
+  }
+  .reviews_main_lower_div {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .Home_text_div_col2 > h3 {
+    width: 115%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 8px;
+  }
+
+  .Home_text_div_col2 > h1 {
+    font-size: 35px;
+  }
+  .footer_main_box {
+    flex-direction: column;
+  }
+  .Home_text_div_col2 > button {
+    width: 34%;
+    font-size: 12px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .Home_text_div_col2 {
+    left: 55%;
+    width: 100%;
+  }
+
+  .Home_text_div_col3 > h1 {
+    font-size: 27px;
+  }
+
+  .Home_text_div_col3 > button {
+    width: 34%;
+    font-size: 12px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .Home_text_div_col3 > h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .Home_text_div_col3 {
+    width: 80%;
+  }
+
+  .Home_text_div_col1 > h3 {
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .Home_text_div_col1 > button {
+    width: 34%;
+    font-size: 12px;
+    padding: 18px;
+    margin-top: 20px;
+  }
+
+  .Home_text_div_col1 > h1 {
+    font-size: 28px;
+  }
+
+  .Home_text_div_col1 {
+    width: 80%;
+  }
+
+  .Home_main_upper_div {
+    /* background-color: red; */
+    /* padding: 20px 30px; */
+  }
+
+  /* --------------------------------------------nav*/
+
+  .Navbar_main {
+    position: fixed;
+    padding: 0px 40px;
+    width: 100%;
+  }
+
+  .Navbar_nav_div {
+    display: none;
+  }
+
+  .nav-btn-sign {
+    font-size: 8px !important;
+  }
+
+  .menu-button {
+    display: initial !important;
+  }
+
+  /* 
       #Courses {
         display: none;
       } */
-    
-      #Courses_2 {
-        display: flex;
-      }
-    
-      .course_main-Box {
-        max-width: 150px;
-      }
-    
-      /* -----------------------------------------------------------teacher */
-    
-      .teachers_main_div {
-        padding: 0px;
-        display: flex;
-        flex-direction: column;
-      }
-    
-      .teachers_right_div {
-        width: 80%;
-      }
-    
-      .teachers_right_div_btn {
-        width: 200px;
-      }
-    
-      /*---------------------------------------------------------------courses */
-    
-      .Home_main_lower_div {
-        padding: 50px 50px;
-        display: flex;
-        flex-direction: column;
-        /* background-color: red; */
-      }
-    
-      .Home_main_lower_box {
-        border: none;
-        padding: 0;
-        width: 260px !important;
-      }
-    
-      .Home_main_lower_box>p {
-        color: #757575;
-        font-size: 10px;
-      }
-    
-      .course_main-Box {
-        max-width: 252px !important;
-      }
-    
-      /* -------------------------------------------------------About */
-    
-      .About_main_column_div {
-        flex-direction: column;
-        margin-top: 40px;
-        gap: 15px;
-        padding: 0rem 1rem;
-      }
-    
-      .About_main_column_left_div>h2 {
-        font-size: 16px;
-      }
-    
-      .About_main_column_left_div_col {
-        height: initial;
-      }
-    
-      .About_main_column_left_div_col_right>h3 {
-        font-size: 14px;
-      }
-    
-      .About_main_column_left_div_col_right>p {
-        font-size: 10px;
-      }
-    
-      .About_main_div {
-        /* padding: 0px 50px 0px 50px; */
-        align-items: flex-start;
-      }
-    
-      .About_main_column_left_div {
-        padding: 1rem 2rem
-      }
-    
-      .About_main_column_right_div {
-      
-        padding: 0;
-      }
-    
-      .About_main_column_right_form_div {
-        border-radius: 0;
-        border-radius: 0;
-        padding: 3rem 1rem;
-        width: 100%;
-        
-    }
-    .Courserelated_box_div {
-      min-height: auto;
-      flex-direction: column;
-    }
-      }
-@media only screen and (max-width: 480px){
-  .teacher-data{
+
+  #Courses_2 {
+    display: flex;
+  }
+
+  .course_main-Box {
+    max-width: 150px;
+  }
+
+  /* -----------------------------------------------------------teacher */
+
+  .teachers_main_div {
+    padding: 0px;
+    display: flex;
     flex-direction: column;
   }
-  .teachers_right_div{
+
+  .teachers_right_div {
+    width: 80%;
+  }
+
+  .teachers_right_div_btn {
+    width: 200px;
+  }
+
+  /*---------------------------------------------------------------courses */
+
+  .Home_main_lower_div {
+    padding: 50px 50px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+  }
+
+  .Home_main_lower_box {
+    border: none;
+    padding: 0;
+    width: 260px !important;
+  }
+
+  .Home_main_lower_box > p {
+    color: #757575;
+    font-size: 10px;
+  }
+
+  .course_main-Box {
+    max-width: 252px !important;
+  }
+
+  /* -------------------------------------------------------About */
+
+  .About_main_column_div {
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 15px;
+    padding: 0rem 1rem;
+  }
+
+  .About_main_column_left_div > h2 {
+    font-size: 16px;
+  }
+
+  .About_main_column_left_div_col {
+    height: initial;
+  }
+
+  .About_main_column_left_div_col_right > h3 {
+    font-size: 14px;
+  }
+
+  .About_main_column_left_div_col_right > p {
+    font-size: 10px;
+  }
+
+  .About_main_div {
+    /* padding: 0px 50px 0px 50px; */
+    align-items: flex-start;
+  }
+
+  .About_main_column_left_div {
+    padding: 1rem 2rem;
+  }
+
+  .About_main_column_right_div {
+    padding: 0;
+  }
+
+  .About_main_column_right_form_div {
+    border-radius: 0;
+    border-radius: 0;
+    padding: 3rem 1rem;
+    width: 100%;
+  }
+  .Courserelated_box_div {
+    min-height: auto;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .teacher-data {
+    flex-direction: column;
+  }
+  .teachers_right_div {
     margin: 0;
     align-items: center;
     gap: 0;
-}
-.reviews_main_lower_box {
-  width: 80%;
+  }
+  .reviews_main_lower_box {
+    width: 80%;
   }
 }

@@ -64,25 +64,27 @@ const Bookings = () => {
                     </td>
                     <td className="td">
                       {Booking?.Scheduled_Dates.map((dateObj, index) => {
-                        const date = Object.keys(dateObj)[0]; // Extracting the date
-                        const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
-
-                        return (
-                          <div key={index}>
-                            {Object.keys(timeSlots).map((date) => (
-                              <div key={date}>
-                                <p>Date: {date}</p>
-                                <ul>
-                                  {timeSlots[date].map((slot, index) => (
-                                    <li key={index}>
-                                      {slot.start} - {slot.end}
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        );
+                        if(dateObj !== null) {
+                          const date = Object.keys(dateObj)[0]; // Extracting the date
+                          const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
+                               return (
+                                 <div key={index}>
+                                   {Object.keys(timeSlots).map((date) => (
+                                     <div key={date}>
+                                       <p>Date: {date}</p>
+                                       <ul>
+                                         {timeSlots[date].map((slot, index) => (
+                                           <li key={index}>
+                                             {slot.start} - {slot.end}
+                                           </li>
+                                         ))}
+                                       </ul>
+                                     </div>
+                                   ))}
+                                 </div>
+                               );
+                        }
+                   
                       })}
                     </td>
                     <td className="td">{Booking?.Status}</td>

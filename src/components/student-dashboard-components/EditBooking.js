@@ -61,7 +61,7 @@ const EditBooking = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const status = "Scheduled";
+    const status = "Rescheduled";
     const updatedData = { status, SelectedSlot };
     try {
       await dispatch(Updatebooking({ BookingID, updatedData }));

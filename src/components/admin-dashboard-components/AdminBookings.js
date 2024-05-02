@@ -12,7 +12,7 @@ const AdminBookings = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const booking = useSelector((state) => state.bookings.Allbookinglist);
-  // console.log(booking);
+  console.log(booking);
 
   useEffect(() => {
     dispatch(fetchAllbookings());
@@ -42,7 +42,7 @@ const AdminBookings = () => {
           </Link> */}
         </div>
         <div className="Booking_list_style d-flex flex-wrap flex-row">
-          {booking && booking?.length > 0 ? (
+          { booking?.length > 0 ? (
             <table className="table table-hover table-responsive table-borderless">
               <thead className="table-transparent">
                 <tr>
@@ -79,25 +79,29 @@ const AdminBookings = () => {
                     <td className="td">{booking?.Status}</td>
                     <td className="td">
                       {booking?.Scheduled_Dates?.map((dateObj, index) => {
-                        const date = Object.keys(dateObj)[0]; // Extracting the date
-                        const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
-
-                        return (
-                          <div key={index}>
-                            {Object.keys(timeSlots)?.map((date) => (
-                              <div key={date}>
-                                <p>Date: {date}</p>
-                                <ul>
-                                  {timeSlots[date]?.map((slot, index) => (
-                                    <li key={index}>
-                                      {slot.start} - {slot.end}
-                                    </li>
+                        if(dateObj !== null){
+                          const date = Object?.keys(dateObj)[0]; // Extracting the date
+                          const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
+                              return (
+                                <div key={index}>
+                                  {Object.keys(timeSlots)?.map((date) => (
+                                    <div key={date}>
+                                      <p>Date: {date}</p>
+                                      <ul>
+                                        {timeSlots[date]?.map((slot, index) => (
+                                          <li key={index}>
+                                            {slot.start} - {slot.end}
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </div>
                                   ))}
-                                </ul>
-                              </div>
-                            ))}
-                          </div>
-                        );
+                                </div>
+                              );
+                        }
+
+
+  
                         // return <span>{dateObj}</span>;
                       })}
                     </td>

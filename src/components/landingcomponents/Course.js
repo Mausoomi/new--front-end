@@ -73,31 +73,32 @@ const Courses = () => {
   }
 
   return (
-    <div style={course_main_lower_div} id=''>
-      <div className=''>
+    <div style={course_main_lower_div} id="Courses">
+      <div className="">
         <Slider {...sliderSettings}>
           {courses?.map((course, index) => (
             <div key={index}>
-              <div className='box-slider-card'>
-                <div className='course_main-Box'>
-                  <div className='Home_main_lower_box_circle'>
-                    <img src={`https://ik.imagekit.io/8s3jwexmv/${course.Course_Images}`} alt='' />
+              <div className="box-slider-card">
+                <div className="course_main-Box">
+                  <div className="Home_main_lower_box_circle">
+                    <img
+                      src={`https://ik.imagekit.io/8s3jwexmv/${course.Course_Images}`}
+                      alt=""
+                    />
                   </div>
 
-                  <Link className='course-name Home_main_lower_box_Link' to={`/CourseDetails/${course._id}`}><p>
-                    {course.Course_Name}
-                  </p>
+                  <Link
+                    className="course-name Home_main_lower_box_Link"
+                    to={`/CourseDetails/${course._id}`}
+                  >
+                    <p>{course.Course_Name}</p>
                   </Link>
-                  <div className='text-break'>
-                    {course.Description}
-                  </div>
+                  <div className="text-break">{course.Description}</div>
 
-                  <p className='text-success'>${course.Purchase_Price}</p>
+                  <p className="text-success">${course.Purchase_Price}</p>
                 </div>
               </div>
-
             </div>
-
           ))}
         </Slider>
       </div>

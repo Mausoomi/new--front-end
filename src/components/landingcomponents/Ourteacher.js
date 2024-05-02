@@ -73,7 +73,7 @@ const Ourteacher = () => {
                 <div key={teacher._id} className=' ourteacher_main_lower_box'>
                   <div >
                     <div className='ourteacher_main_lower_div_img'>
-                    <img  style={{width:"100%"}} src={`https://ik.imagekit.io/8s3jwexmv/${teacher.Profile_Image}`} alt='' />
+                    <img  style={{width:"100%", height:"100%"}} src={`https://ik.imagekit.io/8s3jwexmv/${teacher.Profile_Image}`} alt='' />
                     </div>
                  
                     <div className='ourteacher_main_lower_box_div'>

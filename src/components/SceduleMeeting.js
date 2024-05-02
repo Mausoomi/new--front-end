@@ -42,19 +42,41 @@ const SceduleMeeting = () => {
   const isAuthenticated = useSelector(
     (state) => state.students.isAuthenticated
   );
+  const userType = useSelector((state) => state.students.userType);
   const FreePackage = useSelector((state) => state.packages.FreePackage);
 
   const AvailableAvailability = useSelector(
     (state) => state.bookings.Teacher_Availabile_Booking_Slots
   );
 
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/Student-dashboard");
-    } else {
-      navigate("/Scedule-Meeting");
-    }
-  }, [isAuthenticated, navigate]);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     navigate("/Student-dashboard");
+  //   } else {
+  //     navigate("/Scedule-Meeting");
+  //   }
+  // }, [isAuthenticated, navigate]);
+    useEffect(() => {
+      if (isAuthenticated > 0) {
+        switch (userType) {
+          case "student":
+            navigate("/Student-dashboard/dash");
+            break;
+          case "teacher":
+            navigate("/Teacher-dashboard/dash");
+            break;
+          case "admin":
+            navigate("/Admin-Dashboard/Dashboard");
+            break;
+          case "accountant":
+            navigate("/Accontant-Dashboard/dash");
+            break;
+         
+        }
+      } else {
+        // navigate("/");
+      }
+    }, [isAuthenticated, userType, navigate]);
 
   useEffect(() => {
     dispatch(Search_Free_Package());

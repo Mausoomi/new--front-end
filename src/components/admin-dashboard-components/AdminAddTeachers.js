@@ -78,10 +78,29 @@ const AdminAddTeachers = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    console.log(name)
+
+  
+  setFormData((prevData) => ({
+    ...prevData,
+    [name]: value,
+  }));
+    
+    
+
+    //  let newValue = e.target.value;
+
+    //  // Check if the entered value is negative
+    //  if (newValue < 0) {
+    //    // If negative, set it to 0
+    //    newValue = 0;
+    //  }
+
+    //  // Update the state with the new value
+    //  setFormData({
+    //    ...formData,
+    //    purchasePrice: newValue,
+    //  });
   };
 
   const handleSocialLinkChange = (index, platform, value) => {

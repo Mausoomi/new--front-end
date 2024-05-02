@@ -115,45 +115,83 @@ const AdminNav = () => {
     }
   };
 
-  const SearchbarHandler = () => {
-    // console.log(currentLocation)
-    const trimmedInput = Search_Input.replace(/^\s+/, '');
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Teachers') {
-      dispatch(SearchTeacherbyUsername(trimmedInput));
+  // const SearchbarHandler = () => {
+  //   // console.log(currentLocation)
+  //   const trimmedInput = Search_Input.replace(/^\s+/, '');
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Teachers') {
+  //     dispatch(SearchTeacherbyUsername(trimmedInput));
     
-    }
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Students') {
-      dispatch(SearchStudentbyUsername(trimmedInput));
+  //   }
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Students') {
+  //     dispatch(SearchStudentbyUsername(trimmedInput));
    
-    }
-    // /Admin-Dashboard/Courses
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Courses') {
-      dispatch(SearchCoursebyName(trimmedInput));
+  //   }
+  //   // /Admin-Dashboard/Courses
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Courses') {
+  //     dispatch(SearchCoursebyName(trimmedInput));
    
-    }
-    // /Admin-Dashboard/Bookings
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Bookings') {
-      dispatch(SearchBookingbyStudentUsername(trimmedInput));
+  //   }
+  //   // /Admin-Dashboard/Bookings
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Bookings') {
+  //     dispatch(SearchBookingbyStudentUsername(trimmedInput));
       
-    }
-    // /Admin-Dashboard/Enquirys
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Enquirys') {
-      dispatch(SearchEnquirybyStudentUsername(trimmedInput));
+  //   }
+  //   // /Admin-Dashboard/Enquirys
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Enquirys') {
+  //     dispatch(SearchEnquirybyStudentUsername(trimmedInput));
     
-    }
-    // /Admin-Dashboard/Payments
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Payments') {
-      dispatch(SearchPaymentbyStudentUsername(trimmedInput));
+  //   }
+  //   // /Admin-Dashboard/Payments
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Payments') {
+  //     dispatch(SearchPaymentbyStudentUsername(trimmedInput));
    
-    }
-    // /Admin-Dashboard/Packages
-    if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Packages') {
-      dispatch(SearchPackagebyPackageName(trimmedInput));
+  //   }
+  //   // /Admin-Dashboard/Packages
+  //   if (trimmedInput.length > 0 && currentLocation === '/Admin-Dashboard/Packages') {
+  //     dispatch(SearchPackagebyPackageName(trimmedInput));
    
+  //   }
+
+  // };
+
+const SearchbarHandler = () => {
+  const trimmedInput = Search_Input.trim(); // Using trim() directly for trimming whitespace
+
+  if (trimmedInput.length > 0) {
+    const inputLower = trimmedInput.toLowerCase(); // Convert input to lowercase for case-insensitive comparison
+
+    // Convert currentLocation to lowercase for case-insensitive comparison
+    const locationLower = currentLocation.toLowerCase();
+
+    // Dispatch actions based on the lowercase currentLocation
+    switch (locationLower) {
+      case "/admin-dashboard/teachers":
+        dispatch(SearchTeacherbyUsername(inputLower));
+        break;
+      case "/admin-dashboard/students":
+        dispatch(SearchStudentbyUsername(inputLower));
+        break;
+      case "/admin-dashboard/courses":
+        dispatch(SearchCoursebyName(inputLower));
+        break;
+      case "/admin-dashboard/bookings":
+        dispatch(SearchBookingbyStudentUsername(inputLower));
+        break;
+      case "/admin-dashboard/enquirys":
+        dispatch(SearchEnquirybyStudentUsername(inputLower));
+        break;
+      case "/admin-dashboard/payments":
+        dispatch(SearchPaymentbyStudentUsername(inputLower));
+        break;
+      case "/admin-dashboard/packages":
+        dispatch(SearchPackagebyPackageName(inputLower));
+        break;
+      default:
+        // Handle default case or do nothing
+        break;
     }
-
-  };
-
+  }
+};
 
   useEffect(() => {
     setShowSearchBar(currentLocation !== '/Admin-Dashboard/Dashboard');

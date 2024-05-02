@@ -15,7 +15,7 @@ const TeacherDash = () => {
   // console.log(teacher._id)
   console.log(Bookings);
   const dispatch = useDispatch();
-  const navigate  = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(GetBookingsByTeacherID(teacher._id));
@@ -209,7 +209,7 @@ const TeacherDash = () => {
                 <thead className="table-transparent">
                   <tr>
                     <th className="th">#</th>
-                    <th className="th">Teacher Name</th>
+                    <th className="th">Student Name</th>
                     <th className="th">Scheduled_Dates</th>
                     <th className="th">Status</th>
                     <th className="th">Join Button</th>
@@ -232,26 +232,29 @@ const TeacherDash = () => {
                           })}
                         </td>
                         <td className="td">
-                          {Booking?.Scheduled_Dates.map((dateObj, index) => {
-                            const date = Object.keys(dateObj)[0]; // Extracting the date
-                            const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
-
-                            return (
-                              <div key={index}>
-                                {Object.keys(timeSlots).map((date) => (
-                                  <div key={date}>
-                                    <p>Date: {date}</p>
-                                    <ul>
-                                      {timeSlots[date].map((slot, index) => (
-                                        <li key={index}>
-                                          {slot.start} - {slot.end}
-                                        </li>
-                                      ))}
-                                    </ul>
-                                  </div>
-                                ))}
-                              </div>
-                            );
+                          {Booking?.Scheduled_Dates?.map((dateObj, index) => {
+                            if(dateObj !== null){
+                              const date = Object.keys(dateObj)[0]; // Extracting the date
+                              const timeSlots = dateObj[date]; // Extracting the array of time slots for the date
+                                    return (
+                                      <div key={index}>
+                                        {Object.keys(timeSlots).map((date) => (
+                                          <div key={date}>
+                                            <p>Date: {date}</p>
+                                            <ul>
+                                              {timeSlots[date].map(
+                                                (slot, index) => (
+                                                  <li key={index}>
+                                                    {slot.start} - {slot.end}
+                                                  </li>
+                                                )
+                                              )}
+                                            </ul>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    );
+                            }
                           })}
                         </td>
                         <td className="td">{Booking?.Status}</td>

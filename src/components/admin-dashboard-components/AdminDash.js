@@ -105,11 +105,11 @@ const AdminDash = () => {
                     </table>
                  </div>   
             </div>
-            <div className='Admin-Dash_student_calender_box'>
+            {/* <div className='Admin-Dash_student_calender_box'>
             <h6>Events - 2023 to 2024</h6>
             <br/>
               <Calendar/>                      
-            </div>
+            </div> */}
         </div>
     </div>
     </>
