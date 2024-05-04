@@ -9,7 +9,7 @@ const Bookings = () => {
   const student = useSelector((state) => state.students.user);
   const Bookings = useSelector((state) => state.bookings.StudentID_Booking);
   const navigate = useNavigate();
-  // console.log(Bookings);
+  console.log(Bookings);
 
   useEffect(() => {
     dispatch(GetBookingsByStudentID(student._id));

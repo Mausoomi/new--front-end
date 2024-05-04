@@ -72,6 +72,7 @@ import TeacherEditAvailability from "./components/teacher-dashboard-components/T
 import { ToastContainer } from "react-toastify";
 import EditBooking from "./components/student-dashboard-components/EditBooking";
 import EditPackageTeacher from "./components/student-dashboard-components/EditPackageTeacher";
+import EditStudentProfile from "./components/student-dashboard-components/EditStudentProfile";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -107,10 +108,17 @@ const App = () => {
             element={<NotificationTab_Student />}
           />
           <Route path="/Student-dashboard/profile" element={<Profile />} />
+          <Route
+            path="/Student-dashboard/profile/edit-studentProfile/:id"
+            element={<EditStudentProfile />}
+          />
           <Route path="/Student-dashboard/Courses" element={<Courses />} />
 
           <Route path="/Student-dashboard/Packages" element={<Packages />} />
-          <Route path="/Student-dashboard/Package/:Package_ID" element={<EditPackageTeacher />} />
+          <Route
+            path="/Student-dashboard/Package/:Package_ID"
+            element={<EditPackageTeacher />}
+          />
           <Route
             path="/Student-dashboard/Packages/:Package_ID"
             element={<CheckDetails />}
@@ -184,7 +192,7 @@ const App = () => {
         {/* ------------------------------------------------------------------------------------------------------------- Admin Panel Routes  ---------------  */}
 
         {/* Admin  Dashboard Routes */}
-        
+
         <Route
           path="/Admin-Dashboard/"
           element={

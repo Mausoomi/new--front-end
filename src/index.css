@@ -1,6 +1,6 @@
 @import url("https://cdn.syncfusion.com/ej2/material.css");
 /* ---------------Admin Dashboard main div-------------------------------------------------------------------------- */
-.boarderinput{
+.boarderinput {
   border: 1px solid green;
 }
 .Admin-Dashboard_main_div {
@@ -485,27 +485,35 @@
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-
-  gap: 5%;
+    gap: 20px;
+  overflow-y: scroll;
+}
+.Teacher_list_style::-webkit-scrollbar {
+  display: none;
 }
 
+/* Hide scrollbar for IE, Edge and Firefox */
+.Teacher_list_style {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 .teacher_card {
   width: 20%;
-     /* padding: 10px 60px; */
-    /* min-width: 200px; */
-    /* height: 250px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: flex-start; */
-    /* margin-right: 12px; */
-    /* margin-left: 45px; */
-    /* margin-bottom: 10px; */
-    padding: 10px;
-    /* position: relative; */
-    /* -webkit-box-shadow: 0 2px 30px rgba(44,60,74,.08); */
-    box-shadow: 0 2px 30px rgb(37 84 125 / 31%);
-    border-radius: 8px;
+  /* padding: 10px 60px; */
+  /* min-width: 200px; */
+  /* height: 250px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: flex-start; */
+  /* margin-right: 12px; */
+  /* margin-left: 45px; */
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  /* position: relative; */
+  /* -webkit-box-shadow: 0 2px 30px rgba(44,60,74,.08); */
+  box-shadow: 0 2px 30px rgb(37 84 125 / 31%);
+  border-radius: 8px;
 }
 
 .teacher_card_img_div {
@@ -603,7 +611,6 @@ label {
 }
 
 .availability-item {
-
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -630,7 +637,6 @@ label {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
- 
 }
 
 .Add_Teachers_main_div > form::-webkit-scrollbar {
@@ -645,10 +651,10 @@ label {
   font-size: 12px !important;
 }
 .TimeItemBox {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 1rem;
 }
 .react-time-picker {
   font-size: 12px;
@@ -696,21 +702,21 @@ label {
 
 .Student_card {
   width: 20%;
-     /* padding: 10px 60px; */
-    /* min-width: 200px; */
-    /* height: 250px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: flex-start; */
-    /* margin-right: 12px; */
-    /* margin-left: 45px; */
-    /* margin-bottom: 10px; */
-    padding: 10px;
-    /* position: relative; */
-    /* -webkit-box-shadow: 0 2px 30px rgba(44,60,74,.08); */
-    box-shadow: 0 2px 30px rgb(37 84 125 / 31%);
-    border-radius: 8px;
+  /* padding: 10px 60px; */
+  /* min-width: 200px; */
+  /* height: 250px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: flex-start; */
+  /* margin-right: 12px; */
+  /* margin-left: 45px; */
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  /* position: relative; */
+  /* -webkit-box-shadow: 0 2px 30px rgba(44,60,74,.08); */
+  box-shadow: 0 2px 30px rgb(37 84 125 / 31%);
+  border-radius: 8px;
 }
 
 .Student_card_img_div {
@@ -790,7 +796,7 @@ bottom: 5%; */
 
 .Course_mainPage_style {
   width: 100%;
-
+    height: 90%;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.1);
@@ -901,7 +907,6 @@ select {
   /* background-color: red; */
   padding: 11px 19px;
   gap: 3%;
-  
 }
 
 .Admin_teachers_detail_section_header {
@@ -938,14 +943,14 @@ select {
 }
 
 .sociallink_div {
-      /* width: 100%; */
-    /* background-color: #33906C; */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8%;
-    font-size: 18px;
+  /* width: 100%; */
+  /* background-color: #33906C; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+  font-size: 18px;
 }
 
 .Admin_teachers_detail_section_about_div {
@@ -1284,7 +1289,7 @@ bottom: 5%; */
 
 .Package_mainPage_style {
   width: 100%;
-  height: 90%;
+  /* height: 90%; */
   display: flex;
   flex-direction: column;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.1);
@@ -1310,18 +1315,19 @@ bottom: 5%; */
 }
 
 .Package_card {
-  padding: 10px 10px;
-  min-width: 350px;
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin-left: 45px;
-  margin-bottom: 10px;
-  position: relative;
-  box-shadow: 0 2px 30px rgba(44, 60, 74, 0.08);
-  border-radius: 8px;
+    padding: 10px 10px;
+    /* min-width: 350px; */
+    width: 100%;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 2px 30px rgba(44, 60, 74, 0.08);
+    border-radius: 8px;
 }
 .packagegimg {
   width: 20%;
@@ -1594,31 +1600,30 @@ bottom: 5%; */
 
   .Admin_teachers_detail_section_header_div {
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
   }
   .Admin_teachers_detail_section_img_div {
-width: 50%;
-border-radius: 0%;
+    width: 50%;
+    border-radius: 0%;
   }
   .Admin_teachers_detail_section_header_name {
-    gap:5px
+    gap: 5px;
   }
 
-  .Admin_teachers_detail_section_header{
+  .Admin_teachers_detail_section_header {
     width: 80%;
   }
-  .Admin_teachers_detail_section_col{
-width: 80%;
+  .Admin_teachers_detail_section_col {
+    width: 80%;
   }
-  .Teacher_list_style{
-   
+  .Teacher_list_style {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 17px;
     flex-wrap: wrap;
   }
-  .teacher_card{
+  .teacher_card {
     width: 80%;
   }
 }

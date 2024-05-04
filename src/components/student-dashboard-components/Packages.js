@@ -1,60 +1,94 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchAllpackages } from '../../store/actions/packagesActions'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllpackages } from "../../store/actions/packagesActions";
 // import {Link } from 'react-router-dom'
-import AdminNav from '../admin-dashboard-components/AdminNav'
-import { useNavigate } from 'react-router-dom'
+import AdminNav from "../admin-dashboard-components/AdminNav";
+import { useNavigate } from "react-router-dom";
 
 const Packages = () => {
+  const dispatch = useDispatch();
+  const [studentIDMatched, setStudentIdMatched] = useState(false);
+  const navigate = useNavigate();
+  const packages = useSelector((state) => state.packages.packageslist);
+  console.log(packages);
+  // console.log(packages.Student_ID);
+  const student = useSelector((state) => state.students.user);
+  console.log(student._id);
 
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const packages = useSelector((state) => state.packages.packageslist)
-  // console.log(packages)
+  const CheckPageHandler = (Package_ID) => {
+    navigate(`/Student-dashboard/Package/${Package_ID}`);
+  };
+  // if(student._id=== )
 
-  
-  const CheckPageHandler = (Package_ID) =>{
-    navigate(`/Student-dashboard/Package/${Package_ID}`)
-  }
-
+  const checkALreadyPurchased = () => {
+    const studentid = packages.map((item, index) => {
+      console.log(item.Student_ID);
+      if (item.Student_ID === student._id) {
+        setStudentIdMatched(true);
+      }
+    });
+    return studentid;
+  };
 
   useEffect(() => {
-    dispatch(fetchAllpackages())
-  }, [dispatch])
-  
+    checkALreadyPurchased();
+    dispatch(fetchAllpackages());
+  }, [dispatch]);
 
   return (
     <>
-    <AdminNav/>
-    <div className='Package_mainPage_style'>
-      <div className='Package_header_style'>
-        <h6 className='text-dark'>Packages</h6>
-      </div>
-      <div className='Package_list_style mt-3'>
-        {packages?.map((pack,index) =>{
-          return(
-          <div className='Package_card'>
-            <h6 style={{fontSize:"18px"}}>{pack.Package_Name}</h6>
-            {pack.Course_IDs.map((val) => <img className='packagegimg' src={val.Course_Images} alt=''/>)}
-            <h6>{pack.Course_IDs.map((val) => val.Course_Name)}</h6>
-            <p>{pack.Course_IDs.map((val) => val.Description.substring(0,220))}</p>
-            <h6>Teachers Assigned</h6>
-            <div className='d-flex flex-wrap justify-content-center w-100'>
-                {pack?.Teacher_IDs?.map((teacher) => (
-                  <span className='Courses_card_teacher_span mx-1' key={teacher._id}>{teacher.Username}</span>
+      <AdminNav />
+      <div className="Package_mainPage_style">
+        <div className="Package_header_style">
+          <h6 className="text-dark">Packages</h6>
+        </div>
+        <div className="Package_list_style mt-3">
+          {packages?.map((pack, index) => {
+            return (
+              <div className="Package_card" key={index}>
+                <h6 style={{ fontSize: "18px" }}>{pack.Package_Name}</h6>
+                {pack.Course_IDs.map((val) => (
+                  <img className="packagegimg" src={val.Course_Images} alt="" />
                 ))}
-            </div>
-            <div className='d-flex flex-wrap justify-content-center w-100 mt-3'>
-                <span className='Courses_card_teacher_span mx-1' >Number of Lectures : {pack?.Number_of_Lectures}</span>
-                <span className='Courses_card_teacher_span mx-1' >Amount : {pack?.Package_Amount}</span>
-            </div>
-            <button onClick={() => CheckPageHandler(pack._id)} className='btn btn-outline-danger'>Book Now</button>                     
-          </div>
-        )})}
+                <h6>{pack.Course_IDs.map((val) => val.Course_Name)}</h6>
+                <p>
+                  {pack.Course_IDs.map((val) =>
+                    val.Description.substring(0, 220)
+                  )}
+                </p>
+                <h6>Teachers Assigned</h6>
+                <div className="d-flex flex-wrap justify-content-center w-100">
+                  {pack?.Teacher_IDs?.map((teacher) => (
+                    <span
+                      className="Courses_card_teacher_span mx-1"
+                      key={teacher._id}
+                    >
+                      {teacher.Username}
+                    </span>
+                  ))}
+                </div>
+                <div className="d-flex flex-wrap justify-content-center w-100 mt-3">
+                  <span className="Courses_card_teacher_span mx-1">
+                    Number of Lectures : {pack?.Number_of_Lectures}
+                  </span>
+                  <span className="Courses_card_teacher_span mx-1">
+                    Amount : {pack?.Package_Amount}
+                  </span>
+                </div>
+                <button
+                  onClick={() => CheckPageHandler(pack._id)}
+                  className="btn btn-outline-danger"
+                  disabled={pack?.Student_ID === student._id}
+                >
+                  Book Now
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </>
-  )
-}
+  );
+};
 
-export default Packages
+export default Packages;
